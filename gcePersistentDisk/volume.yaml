@@ -1,0 +1,12 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  template:
+    spec:
+      volumes:
+      - name: wordpress-persistent-storage
+        emptyDir: null
+        gcePersistentDisk:
+          pdName: wordpress-persistent-storage
